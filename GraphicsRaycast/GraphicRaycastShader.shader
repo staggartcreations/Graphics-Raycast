@@ -33,7 +33,7 @@
                float3 wNormal = UnityObjectToWorldNormal(i.normal.xyz);
 
 			   //Remap from [-1 to 1] to [0 to 1]
-			   wNormal.rb = wNormal.rb * 0.5 + 0.5;		
+			   wNormal.rgb = wNormal.rgb * 0.5 + 0.5;		
                
                float depth = Linear01Depth(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)).r);
 
