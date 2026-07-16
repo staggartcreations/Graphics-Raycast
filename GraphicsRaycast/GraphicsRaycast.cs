@@ -116,12 +116,9 @@ public static class GraphicsRaycast
         //Grab initial unscaled normal
         hit.normal = new Vector3(outputColor.r, outputColor.g, outputColor.b);
 
-        //Scale X and Z values back to -1 to 1
+        //Scale values back to -1 to 1
         hit.normal = Vector3.Scale(hit.normal, Vector3.one * 2f);
         hit.normal = hit.normal - Vector3.one;
-
-        //Leave Y value in current range. Values below 0 are never returned
-        hit.normal = new Vector3(hit.normal.x, outputColor.g, hit.normal.z);
 
         RenderTexture.active = null;
         outputColor.a = 1f; //Useful so gizmos don't turn transparent
